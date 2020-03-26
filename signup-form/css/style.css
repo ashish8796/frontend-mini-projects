@@ -1,0 +1,153 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-image: url("https://fervent-mayer-36e64f.netlify.com/signup-form-master/images/bg-intro-desktop.png");
+  background-color: #ff7a7a;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  margin: 0 6em;
+  display: grid;
+  grid-gap: 25px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+}
+.container .summery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.container .summery h1 {
+  font-size: 40px;
+  line-height: 50px;
+  font-weight: 700;
+  margin: 0.65em 0;
+}
+.container .summery p {
+  font-size: 15px;
+  opacity: 0.8;
+  line-height: 23px;
+}
+.container .form-container {
+  display: flex;
+  flex-direction: column;
+}
+.container .form-container header {
+  text-align: center;
+  background-color: #6055a5;
+  padding: 25px;
+  border-radius: 5px;
+  margin-bottom: 1.5em;
+  box-shadow: 0 6px rgba(0, 0, 0, 0.2);
+}
+.container .form-container header p {
+  opacity: 0.8;
+}
+.container .form-container header strong {
+  font-weight: 700;
+}
+.container .form-container form {
+  box-shadow: 0 6px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  display: grid;
+  padding: 30px;
+  border-radius: 5px;
+}
+.container .form-container form input {
+  padding: 18px;
+  border: none;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+.container .form-container form input:focus {
+  outline: none;
+}
+.container .form-container form .submit {
+  background: #38cc8c;
+  border: 1px solid #38cc8c;
+  box-shadow: 0 3px #2fb67c;
+  color: #fff;
+  cursor: pointer;
+}
+.container .form-container footer {
+  text-align: center;
+  color: #bbb;
+  font-size: 11px;
+  font-weight: 500;
+  margin: 0;
+}
+.container .form-container footer a {
+  color: red;
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+input::placeholder {
+  font-size: 14px;
+  color: #74767d;
+  font-weight: 550;
+}
+
+/*# sourceMappingURL=style.css.map */
