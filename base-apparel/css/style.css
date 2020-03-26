@@ -1,0 +1,129 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:100,200,300,400,500,700&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: auto;
+  justify-content: space-between;
+  background-image: linear-gradient(135deg, white, #fff5f5);
+}
+
+.text {
+  padding: 0 22.5%;
+  display: flex;
+  flex-direction: column;
+}
+.text .logo {
+  margin: 3.7em 0;
+  width: 200px;
+}
+.text h1 {
+  font-weight: 500;
+  font-size: 65px;
+  letter-spacing: 10px;
+  margin: 0.6em 0;
+  line-height: 65px;
+  color: #413a3a;
+}
+.text h1 span {
+  color: #ce9797;
+  font-weight: 200;
+}
+.text p {
+  margin: 0 30px 30px 0;
+  color: #ce9797;
+  line-height: 26px;
+}
+.text .btn {
+  border: 1px solid #ce9797;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.text .btn .email {
+  padding: 0 30px;
+  border: none;
+  border-radius: 50px;
+}
+.text .btn .email::placeholder {
+  font-size: 18px;
+  color: #ce9797;
+}
+.text .btn .submit {
+  padding: 13px 45px;
+  background-image: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  box-shadow: 2px 5px 10px rgba(206, 151, 151, 0.5);
+  font-size: 25px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  color: #fff;
+}
+.text .btn input:focus {
+  outline: none;
+}
+
+.side-image {
+  background-image: url("https://fervent-mayer-36e64f.netlify.com/base-apparel-coming-soon-master/images/hero-desktop.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/*# sourceMappingURL=style.css.map */

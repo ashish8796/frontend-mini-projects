@@ -1,0 +1,91 @@
+body {
+  // background-color: #fff;
+  font-family: "Josefin Sans", sans-serif;
+  min-height: 100vh;
+  display: grid;
+  // flex-direction: row;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: auto;
+  justify-content: space-between;
+  background-image: linear-gradient(
+    135deg,
+    hsl(0, 0%, 100%),
+    hsl(0, 100%, 98%)
+  );
+}
+.text {
+  padding: 0 22.5%;
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  .logo {
+    margin: 3.7em 0;
+    width: 200px;
+  }
+
+  h1 {
+    span {
+      color: hsl(0, 36%, 70%);
+      font-weight: 200;
+    }
+    font-weight: 500;
+    font-size: 65px;
+    letter-spacing: 10px;
+    margin: 0.6em 0;
+    line-height: 65px;
+    color: hsl(0, 6%, 24%);
+  }
+
+  p {
+    margin: 0 30px 30px 0;
+    // width: 70%;
+    color: hsl(0, 36%, 70%);
+    line-height: 26px;
+  }
+  .btn {
+    border: 1px solid hsl(0, 36%, 70%);
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .email {
+      padding: 0 30px;
+      border: none;
+      border-radius: 50px;
+      &::placeholder {
+        font-size: 18px;
+        color: hsl(0, 36%, 70%);
+      }
+    }
+    .submit {
+      padding: 13px 45px;
+      background-image: linear-gradient(
+        135deg,
+        hsl(0, 80%, 86%),
+        hsl(0, 74%, 74%)
+      );
+      box-shadow: 2px 5px 10px hsla(0, 36%, 70%, 0.5);
+      font-size: 25px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      color: #fff;
+      // background-color: ;
+    }
+
+    input {
+      // margin: 15px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.side-image {
+  background-image: url("https://fervent-mayer-36e64f.netlify.com/base-apparel-coming-soon-master/images/hero-desktop.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
