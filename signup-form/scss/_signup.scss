@@ -105,3 +105,13 @@ input::placeholder {
   color: #74767d;
   font-weight: 550;
 }
+
+@media screen and (max-width: 769px) {
+
+  .container {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin:0 2em;
+  }
+}
