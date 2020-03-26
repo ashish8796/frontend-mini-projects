@@ -1,0 +1,167 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css?family=Karla&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  background-color: #e5eff5;
+  font-family: "Karla", sans-serif;
+  min-height: 100vh;
+  position: relative;
+}
+
+.wraper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  margin: 0 auto;
+  background-color: #fff;
+  max-width: 800px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 10px 10px rgba(0, 0, 0, 0.05);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.wraper .head {
+  grid-column: 1/3;
+  grid-row: 1/2;
+  padding-bottom: 35px;
+}
+.wraper .head h1 {
+  color: #2ab2af;
+  font-size: 34px;
+  font-weight: bold;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  margin-left: 0.83em;
+}
+.wraper .head h3 {
+  font-size: 1.5em;
+  margin-left: 1.2em;
+  color: #c0df34;
+  font-weight: bold;
+  padding-bottom: 0.5em;
+}
+.wraper .head p {
+  color: #999;
+  font-size: 18px;
+  margin: 7px;
+  margin-left: 2em;
+}
+.wraper .subscription {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  background-color: #2ab2af;
+  color: #fff;
+  font-size: 18px;
+  padding: 35px;
+}
+.wraper .subscription h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 20px 0;
+  margin-bottom: 1em;
+}
+.wraper .subscription p {
+  margin: 1em 0 2em 0;
+}
+.wraper .subscription .cost {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.wraper .subscription .cost h2 {
+  color: #fff;
+  font-size: 50px;
+  margin-right: 10px;
+}
+.wraper .subscription .cost p {
+  color: #a4dbda;
+  font-size: 18px;
+}
+.wraper .subscription button {
+  width: 100%;
+  background-color: #c0df34;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 5px 10px 10px rgba(0, 0, 0, 0.05);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 20px 0;
+}
+.wraper .description {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  background-color: #4bbebc;
+  color: #fff;
+  padding: 35px;
+}
+.wraper .description h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 20px 0;
+}
+.wraper .description ul {
+  list-style-type: none;
+  opacity: 0.7;
+}
+.wraper .description ul li {
+  line-height: 28px;
+}
+
+/*# sourceMappingURL=main.css.map */
