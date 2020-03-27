@@ -1,0 +1,158 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css?family=Libre+Franklin:200,300,400,500,600,700&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "Libre Franklin", sans-serif;
+  text-align: center;
+}
+body img {
+  display: block;
+  margin: 0 auto;
+}
+
+.container {
+  padding: 2em;
+  max-width: 625px;
+  margin: 0 auto;
+}
+.container .logo {
+  padding: 2em;
+}
+.container h1 {
+  padding: 0.3em;
+  color: #969696;
+  font-weight: 300;
+  font-size: 50px;
+}
+.container h1 strong {
+  color: #151f29;
+  font-weight: 700;
+}
+.container h2 {
+  margin-bottom: 40px;
+  font-size: 25px;
+  font-weight: lighter;
+  padding: 0.5em;
+}
+.container input {
+  padding: 0.8em;
+  font-size: 20px;
+  border: none;
+  border-radius: 50px;
+}
+.container input::placeholder {
+  font-size: 18px;
+  opacity: 0.4;
+}
+.container .email {
+  border: 1px solid #969696;
+}
+.container .submit {
+  background-color: #4f7df3;
+  color: #fff;
+  box-shadow: 0 5px 5px #c2d3ff;
+}
+
+.illustration-img {
+  margin: 4.5em 0;
+  max-width: 100%;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style-type: none;
+  margin-bottom: 20px;
+}
+ul li {
+  color: #fff;
+  margin: 10px;
+}
+ul a {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+}
+ul a:hover {
+  background-color: #4f7df3;
+  color: #fff;
+}
+ul footer p {
+  opacity: 0.5;
+}
+
+.contact {
+  margin: 1.3em 0 2em 0;
+  display: grid;
+  grid-template-columns: 3fr 1.2fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  .contact {
+    display: grid;
+    border: 1px solid blue;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

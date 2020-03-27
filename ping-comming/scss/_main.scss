@@ -1,0 +1,127 @@
+body {
+  font-family: "Libre Franklin", sans-serif;
+  text-align: center;
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.container {
+  padding: 2em;
+  max-width: 625px;
+  margin: 0 auto;
+
+  .logo {
+    padding: 2em;
+  }
+  h1 {
+    padding: 0.3em;
+    color: hsl(0, 0%, 59%);
+    font-weight: 300;
+    font-size: 50px;
+
+    strong {
+      color: hsl(209, 33%, 12%);
+      font-weight: 700;
+    }
+  }
+
+  h2 {
+    margin-bottom: 40px;
+    font-size: 25px;
+    font-weight: lighter;
+    padding: 0.5em;
+  }
+
+    input {
+      padding: 0.8em;
+      font-size: 20px;
+      border: none;
+      border-radius: 50px;
+    }
+
+    input::placeholder {
+      font-size: 18px;
+      opacity: 0.4;
+    }
+
+    .email {
+      border: 1px solid hsl(0, 0%, 59%);
+    }
+
+    .submit {
+      background-color: hsl(223, 87%, 63%);
+      color: #fff;
+      box-shadow: 0 5px 5px hsl(223, 100%, 88%);
+    }
+  }
+
+  .illustration-img {
+    margin: 4.5em 0;
+    max-width: 100%;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style-type: none;
+    margin-bottom: 20px;
+
+    li {
+      color: #fff;
+      margin: 10px;
+    }
+
+    a {
+      height: 40px;
+      width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      text-decoration: none;
+
+      &:hover {
+        background-color: hsl(223, 87%, 63%);
+        color: #fff;
+      }
+    }
+
+  footer {
+    p {
+      opacity: .5;
+    }
+  }
+}
+
+.contact {
+  margin: 1.3em 0 2em 0;
+  display: grid;
+  grid-template-columns: 3fr 1.2fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+
+}
+
+
+@media screen and (max-width:500px) {
+  .contact {
+    display: grid;
+    border: 1px solid blue;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .email {
+    // grid-row: 1/2;
+
+  }
+
+  .submit {
+    // grid-row: 2/3;
+
+  }
+}
