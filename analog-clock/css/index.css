@@ -1,0 +1,140 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css?family=Orbitron:400,500,700&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "Orbitron", sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  background: #967aa7;
+  background-image: url(./../img.jpg);
+  background-blend-mode: overlay;
+  border-radius: 10px;
+  flex-direction: column;
+}
+.wrapper .border {
+  width: 375px;
+  height: 375px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #ffae00, #8400ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 3px gray;
+}
+.wrapper .frame {
+  width: 310px;
+  height: 310px;
+  border-radius: 50%;
+  text-align: center;
+  background: #fff;
+  position: relative;
+  box-shadow: 0px -3px 4px 2px #9e9797a3;
+}
+.wrapper .center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.wrapper .point {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #93488c;
+}
+.wrapper .inner-circle {
+  width: 165px;
+  height: 165px;
+  border-radius: 50%;
+  background: #e6dada7a;
+}
+.wrapper .sec-hand {
+  width: 190px;
+  height: 3px;
+  background: #93488c;
+  transform: translateX(-50px) translateY(-27px) rotate(-30deg);
+}
+.wrapper .min-hand {
+  width: 170px;
+  height: 3px;
+  background: #efac39;
+  transform: translate(-50px, 3px) rotate(10deg);
+}
+.wrapper .hr-hand {
+  width: 133px;
+  height: 3px;
+  background: #efac39;
+  transform: translate(-53px, 5px) rotate(30deg);
+}
+
+.hour-number {
+  color: #93488c;
+  margin: 26px 0 0 0;
+  font-size: 30px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+/*# sourceMappingURL=index.css.map */
