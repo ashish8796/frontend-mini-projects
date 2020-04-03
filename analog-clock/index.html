@@ -11,23 +11,30 @@
     <div class="wrapper">
       <div class="border">
         <div class="frame">
-          <div class="inner-circle center"></div>
-          <div class="sec-hand center"></div>
-          <div class="min-hand center"></div>
-          <div class="hr-hand center"></div>
+          <div class="inner-circle center">
+            <div class="min-hand">
+              <div class="actual-min-hand"></div>
+            </div>
+            <div class="hr-hand">
+              <div class="actual-hr-hand"></div>
+            </div>
+            <div class="sec-hand">
+              <div class="actual-sec-hand"></div>
+            </div>
+          </div>
           <div class="point center"></div>
         </div>
       </div>
 
       <div class="digital-clock">
         <h1>
-          <span class="hours">11</span>:<span class="minutes">25</span
-          ><span class="day-night">AM</span>
+          <span id="hours">11</span> : <span id="minutes">25</span
+          ><span id="day-night">AM</span>
         </h1>
 
         <h2>
-          <span class="day">Thu</span>,<span class="date">7</span
-          ><span class="month">Sep</span>,<span class="year">2020</span>
+          <span id="day">Thu</span> , <span id="date">7</span>
+          <span id="month">Sep</span> , <span id="year">2020</span>
         </h2>
       </div>
     </div>

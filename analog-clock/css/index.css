@@ -109,24 +109,38 @@ body {
   height: 165px;
   border-radius: 50%;
   background: #e6dada7a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .wrapper .sec-hand {
-  width: 190px;
+  width: 60px;
   height: 3px;
+  position: absolute;
+}
+.wrapper .actual-sec-hand {
   background: #93488c;
-  transform: translateX(-50px) translateY(-27px) rotate(-30deg);
+  width: 160px;
+  height: 2.5px;
 }
 .wrapper .min-hand {
-  width: 170px;
+  width: 10px;
   height: 3px;
+  position: absolute;
+}
+.wrapper .actual-min-hand {
+  width: 116px;
+  height: 5px;
   background: #efac39;
-  transform: translate(-50px, 3px) rotate(10deg);
 }
 .wrapper .hr-hand {
-  width: 133px;
+  width: 10px;
   height: 3px;
+}
+.wrapper .actual-hr-hand {
+  width: 87px;
+  height: 5px;
   background: #efac39;
-  transform: translate(-53px, 5px) rotate(30deg);
 }
 
 .hour-number {
@@ -135,6 +149,23 @@ body {
   font-size: 30px;
   position: absolute;
   transform: translate(-50%, -50%);
+}
+
+.digital-clock {
+  margin-top: 40px;
+  text-align: center;
+  background: linear-gradient(to right, #ff6600, rgba(21, 5, 114, 0.856));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.digital-clock h1 {
+  font-size: 30px;
+  line-height: 50px;
+  font-weight: bold;
+}
+.digital-clock h2 {
+  font-size: 15px;
+  font-weight: bolder;
 }
 
 /*# sourceMappingURL=index.css.map */

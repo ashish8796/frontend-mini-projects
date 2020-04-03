@@ -32,31 +32,62 @@ function shiftHour(elem, angle) {
 
 //Function for moving the different clock hand;
 
-let secElem = document.querySelector('.sec-hand');
-let minElem = document.querySelector('.min-hand');
-let hrElem = document.querySelector('.hr-hand');
+let secHand = document.querySelector('.sec-hand');
+let minHand = document.querySelector('.min-hand');
+let hrHand = document.querySelector('.hr-hand');
 
-
-function moveSecMinHand() {
+function moveClockHand() {
   let date = new Date();
+  let seconds = date.getSeconds();
+  let minutes = date.getMinutes();
+  let hours = date.getHours();
+
+  let secDegree = -90 + seconds * 6;
+  let minDegree = -90 + minutes * 6 + seconds * .1;
+  let hrDegree = -90 + (hours * 3600 + minutes * 60 + seconds) / 120;
+
+  secHand.setAttribute('style', `transform : rotate(${secDegree}deg)`);
+  minHand.setAttribute('style', `transform : rotate(${minDegree}deg)`);
+  hrHand.setAttribute('style', `transform : rotate(${hrDegree}deg)`);
+}
+
+// Function for digital clock 
+
+let hoursElem = document.querySelector('#hours');
+let minutesElem = document.querySelector('#minutes');
+let dayNightElem = document.querySelector('#day-night');
+
+
+let dayElem = document.querySelector('#day');
+let dateElem = document.querySelector('#date');
+let monthElem = document.querySelector('#month');
+let yearElem = document.querySelector('#year');
+
+function digitalClock() {
+  let date = new Date();
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
   
-  secElem.style.tansform = 'rotate(' + 6 + 'deg)';
-  minElem.style.tansform = 'rotate(' + .1 + 'deg)';
+  dayNightElem.innerText = hours > 11 ? " PM" : " AM";
+  hours = hours > 12 ? hours-12: hours;
+  
+  minutesElem.innerText = makeDouble(minutes);
+  hoursElem.innerText = makeDouble(hours);
+  dateElem.innerText = date.getDate();
+  monthElem.innerText = date.toString().slice(4,7);
+  dayElem.innerText = date.toString().slice(0,4);
+  yearElem.innerText = date.getFullYear();
 }
 
-function moveHrHand() {
-  hrElem.style.tansform = 'rotate(' + .5 + 'deg)';
-}
+//Function for making double digit number when number is less than 10 with adding 0;
 
-moveSecMinHand();
-moveHrHand();
+makeDouble = (number) => number < 10 ? "0"+ number : number;
+
+moveClockHand();
+
+digitalClock();
 
 setInterval(() => {
-  moveSecMinHand()
+  moveClockHand();
+  digitalClock();
 }, 1000)
-
-setInterval(() => {
-  moveHrHand()
-}, 60000)
-
-
