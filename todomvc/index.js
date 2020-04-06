@@ -10,7 +10,10 @@ function generateTodos(arr) {
         <div class="circle" data-id="${elem.id}">
         <img class="tick ${elem.isCompleted && "visible"}" data-id="${elem.id}" src="img/tick.svg" /></div>
       </div>
-      <p data-id="${elem.id}" style="${elem.isCompleted ? "text-decoration: line-through" : "text-decoration: none"}">${elem.value} </p>
+      <div class="edit">
+        <p data-id="${elem.id}" class="para-value" style="${elem.isCompleted ? "text-decoration: line-through" : "text-decoration: none"}">${elem.value} </p>
+        <form class="edit-form"><input type="text" class="display" value="${elem.value}"/></form>
+      </div>
       <div class="Button">
         <button class="delete-btn" data-id="${elem.id}">X</button>
       </div>
@@ -36,22 +39,14 @@ const toggleTodo = (itemId) => {
 }
 
 const mkBtnVbl = (btnText, tabs) => {
-  for(let i of tabs) {
-    if(i.innerText.toLowerCase() == btnText) {
+  for (let i of tabs) {
+    if (i.innerText.toLowerCase() == btnText) {
       i.classList.add('clr-btn');
     } else {
       i.classList.remove('clr-btn');
     }
-  } 
+  }
 }
-
-
-
-
-
-
-
-
 
 let todoArr = [];
 const itemsLeft = document.querySelector('#left-items');
@@ -75,14 +70,27 @@ form.addEventListener('submit', (event) => {
   //Add todo markup in the html file
   generateTodos(todoArr);
   itemsLeft.innerText = `${todoArr.length} items left`;
+
+  const editForm = document.querySelector('.edit-form');
+
+  editForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const innerFormTodo = event.target.querySelector('input').value
+
+    index = todoArr.findIndex(elem => elem.id == itemId);
+
+    todoArr[index].value = innerFormTodo;
+    generateTodos(todoArr);
+  })
 })
 
+let editItem= null;
+let itemId = null;
 
 todoList.addEventListener('click', (event) => {
   const clickedItem = event.target;
-  const itemId = clickedItem.dataset.id;
+  const itemId = clickedItem.dataset.id
 
-  // delete an todo
   if (clickedItem.classList.contains('delete-btn')) {
     deletTodo(itemId);
   }
@@ -93,6 +101,10 @@ todoList.addEventListener('click', (event) => {
 
   if (clickedItem.classList.contains('visible')) {
     toggleTodo(itemId);
+  }
+
+  if (clickedItem.classList.contains('display')) {
+    editItem = clickedItem.value;
   }
 })
 
@@ -126,8 +138,17 @@ completeBtn.addEventListener('click', (event) => {
   mkBtnVbl(btnText, tabs)
 })
 
-clearBtn.addEventListener('click', (event) =>{
+clearBtn.addEventListener('click', (event) => {
   todoArr = todoArr.filter(elem => elem.isCompleted == false)
   generateTodos(todoArr);
   itemsLeft.innerText = `${todoArr.length} items left`;
+})
+
+todoList.addEventListener('dblclick', (event) => {
+  const targetedItem = event.target;
+  if (targetedItem.classList.contains('para-value')) {
+    targetedItem.parentElement.children[1].classList.remove('edit-form')
+    targetedItem.style.display = 'none';
+    itemId = targetedItem.dataset.id;
+  }
 })
