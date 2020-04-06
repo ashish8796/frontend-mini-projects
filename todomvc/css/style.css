@@ -1,0 +1,157 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font: 300 14px / 1.4em "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: rgb(245, 245, 245);
+}
+
+.container {
+  font-size: 2rem;
+  box-shadow: 2px 5px 12px 1px #bdb8b8;
+  border-radius: 10px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.todo {
+  border-bottom: 2px solid lightgray;
+  margin: 0;
+}
+
+.todo-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.items {
+  border-bottom: 0.5px solid lightgray;
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+.items p {
+  margin-left: 20px;
+}
+
+#ckbox {
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+  position: relative;
+}
+
+input {
+  background-color: white;
+  width: 100%;
+  border-style: none;
+  font-size: 2rem;
+  padding: 0.5em;
+}
+
+.tick {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  border-radius: 50%;
+  /* overflow: hidden; */
+  
+}
+
+.visible {
+  visibility: visible;
+}
+
+::placeholder {
+  font-style: italic;
+  color: #d9d9d9;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border: 1px solid gray;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Button {
+  width: 100%;
+  visibility: hidden;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: white;
+}
+
+button {
+  color: red;
+  border-style: none;
+  background-color: white;
+  border-radius: 50%;
+  font-size: 1rem;
+}
+
+.items:hover .Button {
+  display: flex;
+  visibility: visible;
+}
+
+header {
+  text-align: center;
+  font-size: 3rem;
+  color: rgba(175, 47, 47, 0.15);
+}
+
+.trailer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+}
+
+.trailer p {
+  margin-left: 3px;
+  font-size: 1rem;
+  color: gray;
+}
+
+.trailer button {
+  color: gray;
+  border-style: none;
+}
+
+.clr-btn {
+  background-color: gray;
+  color: white !important;
+}
+
+.Complete {
+  border: 1px solid lightblue;
+}
+
+.trailer button:hover {
+  cursor: pointer;
+}
+.clear:hover {
+  text-decoration: underline;
+}
+button:focus {
+  outline: none;
+}
