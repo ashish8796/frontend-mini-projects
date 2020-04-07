@@ -1,4 +1,3 @@
-
 // Need to make an function for adding todo in the markUP
 
 function generateTodos(arr) {
@@ -48,11 +47,16 @@ const mkBtnVbl = (btnText, tabs) => {
   }
 }
 
-let todoArr = [];
+let todoArr = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : [];
 const itemsLeft = document.querySelector('#left-items');
 const inputTodo = document.querySelector('#todo');
 const form = document.querySelector('.todo');
 const todoList = document.querySelector('.todo-list');
+if (todoArr.length > 0) {
+  generateTodos(todoArr);
+  itemsLeft.innerText = `${todoArr.length} items left`;
+}
+
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -69,6 +73,7 @@ form.addEventListener('submit', (event) => {
 
   //Add todo markup in the html file
   generateTodos(todoArr);
+  localStorage.setItem('user', JSON.stringify(todoArr));
   itemsLeft.innerText = `${todoArr.length} items left`;
 
   const editForm = document.querySelector('.edit-form');
@@ -81,10 +86,11 @@ form.addEventListener('submit', (event) => {
 
     todoArr[index].value = innerFormTodo;
     generateTodos(todoArr);
+    localStorage.setItem('user', JSON.stringify(todoArr));
   })
 })
 
-let editItem= null;
+let editItem = null;
 let itemId = null;
 
 todoList.addEventListener('click', (event) => {
@@ -93,14 +99,17 @@ todoList.addEventListener('click', (event) => {
 
   if (clickedItem.classList.contains('delete-btn')) {
     deletTodo(itemId);
+    localStorage.setItem('user', JSON.stringify(todoArr));
   }
 
   if (clickedItem.classList.contains('circle')) {
     toggleTodo(itemId);
+    localStorage.setItem('user', JSON.stringify(todoArr));
   }
 
   if (clickedItem.classList.contains('visible')) {
     toggleTodo(itemId);
+    localStorage.setItem('user', JSON.stringify(todoArr));
   }
 
   if (clickedItem.classList.contains('display')) {
@@ -118,8 +127,10 @@ const tabs = [activeBtn, completeBtn, allBtn];
 allBtn.addEventListener('click', (event) => {
   btnText = event.target.innerText.toLowerCase();
   generateTodos(todoArr);
+  localStorage.setItem('user', JSON.stringify(todoArr));
   itemsLeft.innerText = `${todoArr.length} items left`;
   mkBtnVbl(btnText, tabs)
+
 })
 
 activeBtn.addEventListener('click', (event) => {
@@ -141,6 +152,7 @@ completeBtn.addEventListener('click', (event) => {
 clearBtn.addEventListener('click', (event) => {
   todoArr = todoArr.filter(elem => elem.isCompleted == false)
   generateTodos(todoArr);
+  localStorage.setItem('user', JSON.stringify(todoArr));
   itemsLeft.innerText = `${todoArr.length} items left`;
 })
 
