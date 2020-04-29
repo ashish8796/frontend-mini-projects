@@ -11,9 +11,14 @@ body {
   align-items: center;
 }
 
-// .photo {
-//   border: 1px solid red;
-// }
+.photo {
+  width: 66.5%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 button {
   font-size: 50px;
   color: blue;

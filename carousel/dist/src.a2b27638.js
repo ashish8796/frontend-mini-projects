@@ -208,15 +208,37 @@ var accessKey = "MQ5C-bR-XwJfxJWu5arGKUYGbNp35eojUf1pKyLHGQc";
 var unsplashApi = "https://api.unsplash.com/photos/?client_id=";
 var uri = unsplashApi + accessKey;
 var images;
+var i = 0;
 fetch(uri).then(function (response) {
   return response.json();
 }).then(function (data) {
   images = data;
-  var image = images[0].urls.regular + "&h=600";
-  var imgTag = document.createElement('img');
-  imgTag.setAttribute('src', image);
-  photo.appendChild(imgTag);
+  insertImage(i);
 });
+forwardBtn.addEventListener("click", function (event) {
+  i++;
+  console.log("Forward button pushed");
+  insertImage(i);
+
+  if (i == images.length - 1) {
+    i = -1;
+  }
+});
+backwardBtn.addEventListener("click", function (event) {
+  console.log("Backward button pushed");
+
+  if (i == 0) {
+    i = images.length;
+  }
+
+  i--;
+  insertImage(i);
+});
+
+function insertImage(i) {
+  var image = images[i].urls.regular + "&h=600";
+  photo.innerHTML = "<img src=\"".concat(image, "\" />");
+}
 },{"./sass/reset.scss":"src/sass/reset.scss","./sass/index.scss":"src/sass/index.scss"}],"../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -245,7 +267,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43441" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37513" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

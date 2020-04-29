@@ -11,16 +11,33 @@ let unsplashApi = "https://api.unsplash.com/photos/?client_id=";
 
 let uri = unsplashApi + accessKey;
 let images;
+let i = 0;
 fetch(uri)
-.then(response => response.json())
-.then(data => {
-  images = data;
-  let image = images[0].urls.regular+ "&h=600";
-  let imgTag = document.createElement('img');
-  imgTag.setAttribute('src', image);
-  photo.appendChild(imgTag)
-});
+  .then(response => response.json())
+  .then(data => {
+    images = data;
+    insertImage(i);
+  });
 
+forwardBtn.addEventListener("click", (event) => {
+  i++;
+  console.log(`Forward button pushed`)
+  insertImage(i)
+  if (i == images.length - 1) {
+    i = -1;
+  }
+})
 
+backwardBtn.addEventListener("click", (event) => {
+  console.log("Backward button pushed")
+  if (i == 0) {
+    i = images.length;
+  }
+  i--;
+  insertImage(i)
+})
 
-
+function insertImage(i) {
+  let image = images[i].urls.regular + "&h=600";
+  photo.innerHTML = `<img src="${image}" />`;
+}
