@@ -3,8 +3,31 @@ body {
   height: 100vh;
 }
 
+header {
+  text-align: right;
+  padding: 10px;
+
+  input {
+    border: 1px solid #f40552;
+    border-radius: 10px;
+    outline: none;
+    text-indent: 10px;
+    color: #862a5c;
+    font-size: 18px;
+  }
+
+  .page-no {
+    width: 5%;
+    visibility: hidden;
+
+    &::placeholder {
+      font-size: 10px;
+    }
+  }
+}
+
 .wrapper {
-  height: 100%;
+  height: 90%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -13,7 +36,6 @@ body {
 
 .photo {
   width: 66.5%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

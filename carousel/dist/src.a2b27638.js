@@ -206,23 +206,37 @@ var forwardBtn = document.querySelector(".right-button");
 var backwardBtn = document.querySelector(".left-button");
 var accessKey = "MQ5C-bR-XwJfxJWu5arGKUYGbNp35eojUf1pKyLHGQc";
 var unsplashApi = "https://api.unsplash.com/photos/?client_id=";
+var search = document.querySelector('.search');
 var uri = unsplashApi + accessKey;
 var images;
 var i = 0;
-fetch(uri).then(function (response) {
-  return response.json();
-}).then(function (data) {
-  images = data;
-  insertImage(i);
-});
+var max = 0;
+fetchUri(uri);
+
+function fetchUri(uri) {
+  fetch(uri).then(function (response) {
+    return response.json();
+  }).then(function (data) {
+    if (Array.isArray(data)) {
+      images = data;
+    } else {
+      images = data.results;
+      max = data.total_pages;
+      pages.setAttribute("max", max);
+    }
+
+    insertImage(i);
+  });
+}
+
 forwardBtn.addEventListener("click", function (event) {
+  if (i >= images.length - 1) {
+    i = -1;
+  }
+
   i++;
   console.log("Forward button pushed");
   insertImage(i);
-
-  if (i == images.length - 1) {
-    i = -1;
-  }
 });
 backwardBtn.addEventListener("click", function (event) {
   console.log("Backward button pushed");
@@ -236,9 +250,33 @@ backwardBtn.addEventListener("click", function (event) {
 });
 
 function insertImage(i) {
+  console.log("i: ".concat(i));
   var image = images[i].urls.regular + "&h=600";
   photo.innerHTML = "<img src=\"".concat(image, "\" />");
 }
+
+var pages = document.querySelector(".page-no");
+var page = 1;
+pages.addEventListener('change', function (event) {
+  i = 0;
+  page = pages.value;
+  console.log("page:" + page);
+  unsplashApi = "https://api.unsplash.com/search/photos/?client_id=";
+  uri = unsplashApi + accessKey + "&page=".concat(page, "&query=").concat(query.toLowerCase(), "}");
+  fetchUri(uri);
+});
+var query;
+search.addEventListener("change", function (event) {
+  pages.style.visibility = "visible";
+  page = 1;
+  pages.value = page;
+  query = search.value;
+  i = 0;
+  console.log("query:" + query);
+  unsplashApi = "https://api.unsplash.com/search/photos/?client_id=";
+  uri = unsplashApi + accessKey + "&page=".concat(page, "&query=").concat(query.toLowerCase());
+  fetchUri(uri);
+});
 },{"./sass/reset.scss":"src/sass/reset.scss","./sass/index.scss":"src/sass/index.scss"}],"../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -267,7 +305,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37513" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37563" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
