@@ -1,0 +1,56 @@
+body {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+header {
+  padding: 10px;
+  font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #4d78a7d1;
+
+  .github-symbol {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+i {
+  font-size: 40px;
+  margin: 20px;
+}
+
+input {
+  padding: 10px 20px;
+  margin-right: 5em;
+  font-size: 20px;
+  border: 2px solid hsl(180, 66%, 28%);
+  border-radius: 8px;
+  outline: none;
+}
+
+.user {
+  display: flex;
+  flex-direction: row;
+
+  .user-name {
+    margin-top: 3em;
+  }
+  
+  a {
+    margin: 0 6px;
+    text-decoration: none;
+  }
+  
+}
+
+.profilePic {
+  width: 200px;
+  margin: 3em;
+  border: 2px solid #ff008d;
+  border-radius: 15px;
+}

@@ -1,0 +1,15 @@
+{
+  "name": "github-user-search-engine",
+  "version": "1.0.0",
+  "description": "This application gives detail about the user.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.26.5"
+  }
+}
