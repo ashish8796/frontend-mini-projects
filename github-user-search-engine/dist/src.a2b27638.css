@@ -64,6 +64,7 @@ header {
   align-items: center;
   justify-content: space-between;
   background-color: #4d78a7d1;
+  box-shadow: 2px 2px 6px 1px #31465beb;
 }
 header .github-symbol {
   display: flex;
@@ -71,7 +72,25 @@ header .github-symbol {
   align-items: center;
 }
 
-i {
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.user {
+  display: flex;
+  flex-direction: row;
+  margin: 2em 10em;
+}
+
+.profilePic {
+  width: 300px;
+  margin-right: 3em;
+  border: 2px solid #ff008d;
+  border-radius: 15px;
+}
+
+.fa-github {
   font-size: 40px;
   margin: 20px;
 }
@@ -82,26 +101,114 @@ input {
   font-size: 20px;
   border: 2px solid #187777;
   border-radius: 8px;
+  box-shadow: 2px 2px 6px 1px #31465beb;
   outline: none;
 }
 
-.user {
+p {
+  margin-top: 10px;
+}
+
+.user-details {
+  font-size: 18px;
+}
+
+.user-name {
   display: flex;
-  flex-direction: row;
 }
-.user .user-name {
-  margin-top: 3em;
-}
-.user a {
-  margin: 0 6px;
+.user-name a {
+  margin-top: 19px;
+  margin-left: 5px;
   text-decoration: none;
 }
 
-.profilePic {
-  width: 200px;
-  margin: 3em;
-  border: 2px solid #ff008d;
-  border-radius: 15px;
+.name {
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+#location {
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.fa-blog {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.user-follow-repo {
+  display: flex;
+  flex-direction: row;
+  margin-top: 4em;
+}
+.user-follow-repo div {
+  font-size: 30px;
+  text-align: center;
+  margin-right: 30px;
+}
+.user-follow-repo p {
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+.div-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.div-2 h1 {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.repos {
+  width: 40%;
+}
+.repos div {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #8080804d;
+  margin: 10px;
+}
+.repos p:first-of-type {
+  font-size: 16px;
+  line-height: 20px;
+}
+.repos p:last-of-type {
+  margin-top: 40px;
+}
+.repos a {
+  font-size: 20px;
+  text-decoration: none;
+  color: #6c0b40;
+}
+.repos a:hover {
+  color: #115a5a;
+}
+
+.followers-list {
+  width: 30%;
+}
+.followers-list div {
+  border-bottom: 1px solid #8080804d;
+  display: flex;
+  margin: 10px;
+}
+.followers-list a {
+  margin-left: 20px;
+  margin-bottom: 20%;
+  text-decoration: none;
+  font-size: 20px;
+  color: #000000;
+}
+.followers-list a:hover {
+  color: Green;
+}
+.followers-list img {
+  width: 100px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 2px solid #0e6c50;
 }
 
 /*# sourceMappingURL=/src.a2b27638.css.map */

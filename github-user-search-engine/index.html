@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script src="https://kit.fontawesome.com/60217b89b5.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header>
-    <div class="github-symbol">
-      <i class="fab fa-github"></i>
-      <h1>GitHub User Info</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub User Info</title>
+    <script
+      src="https://kit.fontawesome.com/60217b89b5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="github-symbol">
+        <i class="fab fa-github"></i>
+        <h1>GitHub User Info</h1>
+      </div>
+      <input type="text" placeholder="Enter user-name" id="user-name" />
+    </header>
+    <div class="wrapper">
+      <div class="div-1"></div>
+      <div class="div-2">
+        <section class="repos"></section>
+        <section class="followers-list"></section>
+      </div>
     </div>
-    <input type="text" placeholder="Enter user-name" id="user-name">
-  </header>
-  <div class="wrapper"></div>
-  <script src="./src/index.js"></script>
-</body>
+    <script src="./src/index.js"></script>
+  </body>
 </html>

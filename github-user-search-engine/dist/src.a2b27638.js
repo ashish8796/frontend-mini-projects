@@ -203,6 +203,9 @@ require("./scss/index.scss");
 
 var searchUserName = document.querySelector('#user-name');
 var wrapper = document.querySelector(".wrapper");
+var userDetalils = document.querySelector(".div-1");
+var reposDiv = document.querySelector(".repos");
+var followerListDiv = document.querySelector(".followers-list");
 var user;
 var userName;
 
@@ -213,6 +216,8 @@ function fetchUri(userName) {
   }).then(function (data) {
     user = data;
     showProfile(user);
+    showRepos(user);
+    showFollowers(user);
   });
 }
 
@@ -223,9 +228,35 @@ searchUserName.addEventListener('change', function (event) {
 });
 
 function showProfile(user) {
-  var markUPStr = "\n  <div class=\"user\">\n  <img src=\"".concat(user.avatar_url, "\" class=\"profilePic\">\n  <div class=\"user-name\">\n  User Name: <a href=\"https://github.com/").concat(userName, "\">").concat(user.login, "</a>\n  </div>\n  </div>");
-  console.log(markUPStr);
-  wrapper.innerHTML = markUPStr;
+  var markUPStr = "\n  <div class=\"user\">\n    <img src=\"".concat(user.avatar_url, "\" class=\"profilePic\">\n    <div class=\"user-details\">\n      <div >\n        <div class=\"user-name\">\n          <p class=\"name\">").concat(user.name, "</p> <a href=\"https://github.com/").concat(userName, "\" target=\"blank\">@").concat(user.login, "</a>\n        </div>\n        <p class=\"bio\">").concat(user.bio || " ", "</p>\n        <p class=\"company\">").concat(user.company || " ", "<i class=\"fas fa-map-marker-alt\" id=\"location\"></i>").concat(user.location || " ", "</p>\n        <p class=\"blog\"><i class=\"fas fa-blog\" id=\"blog\"></i><a href=\"").concat(user.blog, "\" target=\"blank\">").concat(user.blog || " ", "</a></p>\n      </div>\n\n      <div class=\"user-follow-repo\">\n        <div class=\"followers\">\n          ").concat(user.followers, "\n          <p>Followers</p>\n        </div>\n        <div class=\"following\">\n          ").concat(user.following, "\n          <p>Following</p>\n        </div>\n        <div class=\"repos-count\">\n          ").concat(user.public_repos, "\n          <p>Repos</p>\n        </div>\n      </div>\n\n    </div>\n  </div>");
+  userDetalils.innerHTML = markUPStr;
+}
+
+function showRepos(user) {
+  console.log(user.repos_url);
+  fetch(user.repos_url).then(function (response) {
+    return response.json();
+  }).then(function (data) {
+    var repos = data;
+    var repoString = repos.map(function (repo) {
+      return "\n        <div>\n          <a href=".concat(repo.html_url, " target=\"blank\">").concat(repo.name, "</a>\n          <p>").concat(repo.description || " ", "</p>\n          <p>").concat(repo.language, " <i class=\"fas fa-star\"></i> ").concat(repo.stargazers_count, " <i class=\"fas fa-code-branch\"></i> ").concat(repo.forks_count, "\n        </div>\n      ");
+    }).join("");
+    console.log(repoString);
+    reposDiv.innerHTML = "<h1>Repositories</h1>\n      ".concat(repoString);
+  });
+}
+
+function showFollowers(user) {
+  fetch(user.followers_url).then(function (response) {
+    return response.json();
+  }).then(function (data) {
+    var followers = data;
+    var followerString = followers.map(function (follower) {
+      return "\n        <div>\n          <img src=\"".concat(follower.avatar_url, "\"> <a href=\"").concat(follower.html_url, "\" target=\"blank\">@").concat(follower.login, "</a>\n        </div>\n        ");
+    }).join("");
+    console.log(followerString);
+    followerListDiv.innerHTML = "<h1>Followers</h1>\n      ".concat(followerString);
+  });
 }
 },{"./scss/reset.scss":"src/scss/reset.scss","./scss/index.scss":"src/scss/index.scss"}],"../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -255,7 +286,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45353" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34845" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
