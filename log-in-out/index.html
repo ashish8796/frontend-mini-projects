@@ -10,9 +10,8 @@
     <div class="wrapper">
       <div class="design">
         <!-- Log in or Sign-up  -->
-        <div class="log-in">
-          <h1>Sign up</h1>
-
+        <div class="log-in-out">
+          <h1 class="sign-up-h1">Sign up</h1>
           <!-- Form for filling up all the details -->
           <form class="sign-up-form">
             <input
@@ -24,6 +23,8 @@
             <label for="first-name">First & last name</label>
             <input type="email" id="email" placeholder="******@gmail.com" />
             <label for="email">E-mail</label>
+            <input type="text" id="username" placeholder="Username" />
+            <label for="user-name">Username</label>
             <input type="password" id="password" />
             <label for="passward">Password</label>
             <div class="ckbox">
@@ -31,6 +32,19 @@
               <p>Please accept term and conditions.</p>
             </div>
             <button type="submit" id="submit">SIGN ME UP</button>
+          </form>
+
+          <!-- Log-in Link -->
+          <p class="log-in-btn">Log In</p>
+
+          <h1 class="log-in-h1">Log In</h1>
+          <!-- Log-in From -->
+          <form class="log-in-form">
+            <input type="text" id="log-in-username" />
+            <label for="log-in-username">Username Or E-mail</label>
+            <input type="text" id="log-in-password">
+            <label for="password">Password</label>
+            <button type="submit" class="log-in-submit">Log In</button>
           </form>
         </div>
 
