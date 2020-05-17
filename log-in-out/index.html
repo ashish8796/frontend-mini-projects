@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log in out</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+    />
   </head>
   <body>
     <!-- Wrpper for the all element -->
@@ -19,13 +23,19 @@
               name="name"
               id="full-name"
               placeholder="Ashish    Saini"
+              required
             />
             <label for="first-name">First & last name</label>
-            <input type="email" id="email" placeholder="******@gmail.com" />
+            <input
+              type="email"
+              id="email"
+              placeholder="******@gmail.com"
+              required
+            />
             <label for="email">E-mail</label>
-            <input type="text" id="username" placeholder="Username" />
+            <input type="text" id="username" placeholder="Username" required />
             <label for="user-name">Username</label>
-            <input type="password" id="password" />
+            <input type="password" id="password" required />
             <label for="passward">Password</label>
             <div class="ckbox">
               <input type="checkbox" name="checkbox" id="checkbox" />
@@ -40,9 +50,9 @@
           <h1 class="log-in-h1">Log In</h1>
           <!-- Log-in From -->
           <form class="log-in-form">
-            <input type="text" id="log-in-username" />
+            <input type="text" id="log-in-username" required />
             <label for="log-in-username">Username Or E-mail</label>
-            <input type="text" id="log-in-password">
+            <input type="text" id="log-in-password" required />
             <label for="password">Password</label>
             <button type="submit" class="log-in-submit">Log In</button>
           </form>

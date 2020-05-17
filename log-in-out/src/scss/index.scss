@@ -36,17 +36,17 @@ body {
 }
 
 .sign-up-h1 {
-  display: none;
   font-size: 40px;
   margin: 2em 1.3em 0 1.3em;
+  animation-duration: 1s;
 }
 
 .sign-up-form {
-  display: none;
-  // display: flex;
+  display: flex;
   margin: 2em 0 0 52px;
   flex-flow: column nowrap;
   width: 45%;
+  animation-duration: 1s;
 }
 
 input {
@@ -141,15 +141,20 @@ label {
 }
 
 .log-in-h1 {
+  display: none;
   font-size: 40px;
   margin: 3em 1.3em 0 1.3em;
+  animation-duration: 1s;
+  animation-delay: -.6s;
 }
 
 .log-in-form {
-  display: flex;
+  display: none;
   flex-direction: column;
   margin: 3em 0 0 52px;
   width: 45%;
+  animation-duration: 1s;
+  animation-delay: -.6s;
 }
 
 .log-in-submit {
