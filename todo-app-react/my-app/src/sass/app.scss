@@ -1,7 +1,7 @@
 body {
   box-sizing: border-box;
   text-align: center;
-  font-family: 'Righteous', cursive;
+  font-family: "Righteous", cursive;
   background-color: #ff7e67;
   height: 100vh;
   display: flex;
@@ -15,28 +15,22 @@ body {
   align-items: space-between;
   justify-content: center;
   background-color: #fafafa;
-  // border: 2px solid blue;
   border-radius: 10px;
   width: 500px;
   padding-bottom: 20px;
-  // height: 90vh;
   position: relative;
 }
-
 
 .heading {
   color: #07689f;
   font-size: 4em;
-  margin: .5em 0 0 0;
-  // border: 1px solid red;
+  margin: 0.5em 0 0 0;
 }
 
 .todo-list {
-  font-family: 'Satisfy', cursive;
+  font-family: "Satisfy", cursive;
   font-size: 25px;
   margin-bottom: 1em;
-  // background-color: #a2d5f2;
-  // border: 1px solid yellow;
 }
 
 .add-todo-form {
@@ -65,29 +59,24 @@ body {
   color: #039603;
 }
 
-.ckbox {
-  margin: 3px 10px 0 5px;
-  width: 17px;
-  height: 17px;
-}
-
-// .ckbox:checked {
-//   .todo {
-//     color: red;
-//   }
-// }
-
 .item-value {
-  display: flex;
-  flex-direction: row;
-  
-  .edit-todo-form {
-    display: "none";
+  p {
+    display: inline-block;
   }
 }
 
+.ckbox {
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+  margin: 3px 10px 0 5px;
+}
+
+.edit-todo-form {
+  display: inline-block;
+}
+
 .edit {
-  // display: none;
   margin-top: -2px;
 }
 

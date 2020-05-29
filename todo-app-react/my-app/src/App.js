@@ -30,7 +30,7 @@ function App() {
     const newTodos = [...todoArr];
 
     newTodos[todoIndex].isCompleted = !newTodos[todoIndex].isCompleted;
-    
+
     setTodoArr(newTodos);
   }
 
@@ -40,11 +40,19 @@ function App() {
   }
 
   const handleEditTodo = (id, editedValue) => {
+
     const newTodos = todoArr.map(todo => {
       todo.value = todo.id === id ? editedValue : todo.value;
+      return todo;
     })
 
+    // const todoIndex = todoArr.findIndex(t => t.id === id);
+    // const newTodos = [...todoArr];
+
+    // newTodos[todoIndex].value = editedValue
+
     setTodoArr(newTodos);
+
   }
 
   return (
@@ -55,7 +63,7 @@ function App() {
       <div className="todo-list">
         {
           todoArr && todoArr.map(todo => {
-            return <Todo todo={todo} key={"todo-" + todo.id} toggleTodo={handleToggleTodo} deletTodo={handleDeletTodo} editTodo={handleEditTodo}/>;
+            return <Todo todo={todo} key={todo.id} toggleTodo={handleToggleTodo} deletTodo={handleDeletTodo} editTodo={handleEditTodo} />;
           })
         }
       </div>
