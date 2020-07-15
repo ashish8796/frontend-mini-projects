@@ -1,0 +1,45 @@
+@import "./reset.scss";
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  margin-top: -2em;
+  margin-bottom: 1em;
+  font-size: 2em;
+}
+
+article {
+  width: 500px;
+}
+
+form {
+  width: 500px;
+  input {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.todo-list {
+  border: 2px solid red;
+  margin-bottom: 30px;
+}
+
+.todo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.todo-value {
+  display: flex;
+  flex-direction: row;
+}
