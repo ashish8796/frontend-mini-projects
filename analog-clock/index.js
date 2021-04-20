@@ -38,11 +38,12 @@ let hrHand = document.querySelector('.hr-hand');
 
 function moveClockHand() {
   let date = new Date();
+  let milliSec =date.getMilliseconds();
   let seconds = date.getSeconds();
   let minutes = date.getMinutes();
   let hours = date.getHours();
 
-  let secDegree = -90 + seconds * 6;
+  let secDegree = -90 + seconds * 6 + milliSec* .006;
   let minDegree = -90 + minutes * 6 + seconds * .1;
   let hrDegree = -90 + (hours * 3600 + minutes * 60 + seconds) / 120;
 
@@ -90,4 +91,4 @@ digitalClock();
 setInterval(() => {
   moveClockHand();
   digitalClock();
-}, 1000)
+}, 10)
